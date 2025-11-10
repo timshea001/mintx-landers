@@ -139,7 +139,9 @@ footer{padding:40px 0;color:var(--muted);font-size:.95rem;text-align:center;bord
 @media (max-width:719px){
   .container{padding:0 24px}
   .hero{padding:60px 0 40px}
-  .hero .hero-grid{padding:0 8px}
+  .hero .hero-grid{padding:0 8px;display:flex;flex-direction:column}
+  .hero .hero-grid > div:first-child{order:2}
+  .hero .hero-grid > div:last-child{order:1;margin-bottom:32px}
   section{padding:60px 0}
   .cta-row{flex-direction:column;align-items:flex-start;gap:12px}
   .btn{max-width:280px;width:auto;justify-content:center;padding:14px 24px}
