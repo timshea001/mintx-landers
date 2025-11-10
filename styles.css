@@ -28,7 +28,7 @@ a{color:inherit}
 .nav-links{display:flex;gap:32px;margin-left:auto}
 .nav-links a{color:#fff;text-decoration:none;font-weight:600;letter-spacing:.01em;padding:8px 0;transition:opacity 0.2s ease}
 .nav-links a:hover{opacity:0.8;text-decoration:none}
-.buy-now{background:#fff;color:var(--mintx-blue);padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none;margin-left:8px;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.buy-now{background:#fff;color:var(--mintx-blue);padding:12px;border-radius:8px;font-weight:500;text-decoration:none;margin-left:8px;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
 .buy-now:hover{background:#F3F4F6;transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,0.12)}
 .nav-toggle{display:none;background:transparent;border:0;width:44px;height:44px;align-items:center;justify-content:center;margin-left:auto}
 .nav-toggle .bar{display:block;width:22px;height:2px;background:#fff;margin:3px 0;transition:all 0.2s ease}
@@ -71,10 +71,24 @@ h2{font-size:clamp(2rem,2.5vw+1.5rem,2.75rem);margin:0 0 32px;font-weight:700;le
 .story-text{font-size:1.125rem;line-height:1.7;color:var(--text);padding:20px 0}
 .story-text p{margin:0}
 
+/* Split Reverse - Image First on Desktop */
+@media (min-width:720px){
+  .split-reverse{grid-template-columns:1fr 1fr}
+  .split-reverse > div:first-child{order:1}
+  .split-reverse > div:last-child{order:0}
+}
+
 /* Enhanced Lists */
 .bullets{margin:20px 0 0 0;padding:0;list-style:none}
 .bullets li{margin:12px 0;padding-left:28px;position:relative;color:#4B5563;line-height:1.6}
 .bullets li::before{content:"✓";position:absolute;left:0;color:var(--brand-green);font-weight:700;font-size:1.1rem}
+
+/* Where to Buy Section */
+.where-to-buy-section{text-align:center}
+.where-to-buy-content{max-width:640px;margin:0 auto}
+.where-to-buy-content p.muted{margin-bottom:32px;font-size:1.125rem}
+.where-cta{display:flex;flex-direction:column;align-items:center;gap:16px}
+.sku-text{margin:0;color:var(--muted);font-size:0.9rem;font-weight:500}
 
 /* Enhanced Reviews */
 .reviews{display:grid;gap:20px;margin-top:40px}
@@ -89,11 +103,12 @@ h2{font-size:clamp(2rem,2.5vw+1.5rem,2.75rem);margin:0 0 32px;font-weight:700;le
 .cta-band h3{margin:0;font-size:2.25rem;font-weight:700;color:#fff;letter-spacing:-0.01em}
 
 /* Enhanced Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:12px 24px;font-weight:600;text-decoration:none;transition:all 0.2s ease;font-size:1rem;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:12px;font-weight:500;text-decoration:none;transition:all 0.2s ease;font-size:1rem;border:none;cursor:pointer}
 .btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--brand-green);color:#fff;box-shadow:0 2px 4px rgba(70,157,40,0.2)}
-.btn-primary:hover{background:#66b95c;transform:translateY(-1px);box-shadow:0 3px 6px rgba(70,157,40,0.3)}
-.btn-ghost{border:2px solid var(--border);background:transparent;color:var(--text);font-weight:600}
+.btn-primary{background:#357b49;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.06), 0 0 2px rgba(0,0,0,.16)}
+.btn-primary:hover{filter:brightness(110%);box-shadow:0 4px 12px rgba(0,0,0,.06), 0 0 2px rgba(0,0,0,.16)}
+.btn-large{padding:14px 32px;font-size:1.125rem;font-weight:500}
+.btn-ghost{border:2px solid var(--border);background:transparent;color:var(--text);font-weight:500}
 .btn-ghost:hover{background:var(--border);border-color:var(--muted)}
 
 /* Enhanced FAQ */
