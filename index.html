@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mint-X Rodent Repellent Trash Bags — Campaign Concepts</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a1a1a;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1B365D;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #4CAF50; }
+
+    .header-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #4CAF50; }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .concepts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 60px 40px 100px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 40px 32px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: #4CAF50;
+      background: rgba(76, 175, 80, 0.06);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .card-number {
+      font-size: 13px;
+      font-weight: 700;
+      color: #7CC242;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #4CAF50;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    .card-arrow {
+      position: absolute;
+      top: 40px;
+      right: 32px;
+      font-size: 24px;
+      color: rgba(255,255,255,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .card-arrow {
+      color: #4CAF50;
+      transform: translateX(4px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .card-external {
+      border-color: rgba(255, 153, 0, 0.2);
+    }
+    .card-external:hover {
+      border-color: #FF9900;
+      background: rgba(255, 153, 0, 0.06);
+    }
+    .card-external h2 { color: #FF9900; }
+    .card-external:hover .card-arrow { color: #FF9900; }
+
+    @media (max-width: 768px) {
+      .concepts { grid-template-columns: 1fr; padding: 40px 20px 80px; }
+      .header { padding: 24px 20px; }
+      .hero { padding: 60px 20px 20px; }
+      .card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Mint<span>-X</span></div>
+    <span class="header-meta">Campaign Concepts &middot; March 2026</span>
+  </header>
+
+  <section class="hero">
+    <h1>Rodent Repellent Trash Bags.<br><span>Campaign Concepts.</span></h1>
+    <p>Landing page, ad concepts with phone mockups, and the live Amazon listing. Everything in one place.</p>
+  </section>
+
+  <section class="concepts">
+
+    <a href="lp.html" class="card">
+      <span class="card-arrow">&rarr;</span>
+      <div class="card-number">01</div>
+      <h2>Landing Page (Dark)</h2>
+      <p>Problem, solution, science, proof. Dark theme, direct tone. They're coming for your trash every single night — unless you switch the bag.</p>
+      <span class="card-tag">Landing Page &middot; Dark Theme</span>
+    </a>
+
+    <a href="lp-light.html" class="card">
+      <span class="card-arrow">&rarr;</span>
+      <div class="card-number">02</div>
+      <h2>Landing Page (Light)</h2>
+      <p>Same content, clean white background. More approachable, retail-friendly feel. Easier on the eyes for daytime browsing.</p>
+      <span class="card-tag">Landing Page &middot; Light Theme</span>
+    </a>
+
+    <a href="ad-concepts.html" class="card">
+      <span class="card-arrow">&rarr;</span>
+      <div class="card-number">03</div>
+      <h2>Ad Concepts</h2>
+      <p>6 ad concepts in phone mockups with Facebook and Instagram toggle. Problem awareness, simple switch, and science/credibility angles.</p>
+      <span class="card-tag">Meta Ads &middot; FB/IG Mockups</span>
+    </a>
+
+    <a href="https://www.amazon.com/dp/B087W8N9X2" target="_blank" class="card card-external">
+      <span class="card-arrow">&nearr;</span>
+      <div class="card-number">04</div>
+      <h2>Amazon Listing</h2>
+      <p>The live Mint-X product listing on Amazon. 4.7 stars, 1,867 reviews. 33 gallon, 40 count. The only EPA registered rodent repellent trash bag.</p>
+      <span class="card-tag">External &middot; Amazon</span>
+    </a>
+
+  </section>
+
+</body>
+</html>

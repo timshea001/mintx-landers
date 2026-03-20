@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mint-X Ad Concepts — Phone Mockups</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a1a1a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 26, 26, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .header-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1B365D;
+      text-decoration: none;
+    }
+    .header-logo span { color: #4CAF50; }
+    .header a.back { color: #4CAF50; font-size: 14px; font-weight: 600; text-decoration: none; }
+    .header a.back:hover { text-decoration: underline; }
+
+    .hero { text-align: center; padding: 80px 40px 20px; }
+    .hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.05; margin-bottom: 12px; }
+    .hero h1 span { color: #4CAF50; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.45); max-width: 600px; margin: 0 auto; }
+
+    /* Platform toggle */
+    .platform-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 24px 20px 16px;
+      position: sticky;
+      top: 65px;
+      z-index: 99;
+      background: rgba(10, 26, 26, 0.95);
+      backdrop-filter: blur(12px);
+    }
+    .platform-toggle button {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .platform-toggle button:first-child { border-radius: 6px 0 0 6px; }
+    .platform-toggle button:last-child { border-radius: 0 6px 6px 0; }
+    .platform-toggle button.active {
+      background: #4CAF50;
+      color: #fff;
+      border-color: #4CAF50;
+    }
+
+    .section-nav {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      padding: 12px 20px 48px;
+      flex-wrap: wrap;
+    }
+    .section-nav a {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.2s;
+    }
+    .section-nav a:hover { color: #4CAF50; border-color: #4CAF50; background: rgba(76,175,80,0.08); }
+
+    .lp-section {
+      max-width: 1400px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+    .lp-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .lp-section-header h2 { font-size: 32px; font-weight: 700; color: #4CAF50; }
+    .lp-subtitle { font-size: 15px; color: rgba(255,255,255,0.35); margin-bottom: 32px; }
+
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    /* ══════ PHONE MOCKUP ══════ */
+    .phone-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone {
+      width: 320px;
+      background: #fff;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 3px #333, 0 0 0 6px #1a1a1a;
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 0 0 16px 16px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .phone-screen {
+      background: #fff;
+      margin-top: -4px;
+    }
+
+    /* ── FB Feed ── */
+    .fb-post { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #fff; }
+
+    .fb-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px 8px;
+    }
+    .fb-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .fb-avatar::after {
+      content: 'MX';
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .fb-name { font-size: 14px; font-weight: 700; color: #050505; line-height: 1.2; }
+    .fb-sponsored { font-size: 12px; color: #65676B; }
+    .fb-sponsored::after { content: " \00B7 \1F310"; font-size: 11px; }
+    .fb-dots { margin-left: auto; color: #050505; font-size: 20px; cursor: pointer; }
+
+    .fb-text {
+      padding: 0 14px 10px;
+      font-size: 14.5px;
+      color: #050505;
+      line-height: 1.35;
+    }
+    .fb-text .see-more { color: #65676B; cursor: pointer; font-weight: 500; }
+
+    .fb-image { width: 100%; display: block; }
+
+    .fb-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: #F0F2F5;
+      gap: 12px;
+    }
+    .fb-bottom-left { flex: 1; min-width: 0; }
+    .fb-desc {
+      font-size: 12px;
+      color: #65676B;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .fb-headline {
+      font-size: 14px;
+      font-weight: 700;
+      color: #050505;
+      line-height: 1.25;
+    }
+    .fb-cta {
+      flex-shrink: 0;
+      background: #E4E6EB;
+      color: #050505;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .fb-engagement {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px 4px;
+    }
+    .fb-reactions { font-size: 13px; color: #65676B; }
+    .fb-reactions-icons { font-size: 16px; margin-right: 4px; }
+    .fb-counts { font-size: 13px; color: #65676B; }
+
+    .fb-actions {
+      display: flex;
+      justify-content: space-around;
+      padding: 4px 14px 10px;
+      border-top: 1px solid #CED0D4;
+      margin-top: 4px;
+    }
+    .fb-action {
+      font-size: 13px;
+      color: #65676B;
+      font-weight: 600;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── IG Feed (dark mode) ── */
+    .ig-post {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    .ig-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+    }
+    .ig-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .ig-avatar::after {
+      content: 'MX';
+      font-size: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .ig-header-info { flex: 1; }
+    .ig-name { font-size: 13px; font-weight: 600; color: #fff; }
+    .ig-sponsored { font-size: 11px; color: #a8a8a8; }
+    .ig-follow {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0095F6;
+      padding: 6px 16px;
+      border: 1px solid #363636;
+      border-radius: 8px;
+      background: transparent;
+    }
+    .ig-dots { color: #fff; font-size: 16px; margin-left: 12px; cursor: pointer; letter-spacing: 2px; }
+
+    .ig-image { width: 100%; display: block; }
+
+    .ig-cta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #262626;
+    }
+    .ig-cta-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .ig-cta-chevron {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .ig-actions-bar {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px 4px;
+      gap: 16px;
+    }
+    .ig-icon { font-size: 24px; color: #fff; cursor: pointer; line-height: 1; }
+    .ig-icon-right { margin-left: auto; }
+
+    .ig-likes {
+      padding: 0 14px 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .ig-caption {
+      padding: 0 14px 12px;
+      font-size: 13px;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .ig-caption strong { font-weight: 700; }
+    .ig-caption .ig-more { color: #a8a8a8; }
+
+    .ig-bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #262626;
+    }
+    .ig-nav-icon { font-size: 22px; color: #fff; opacity: 0.7; }
+    .ig-nav-icon.active { opacity: 1; }
+
+    /* ── Description below mockup ── */
+    .ad-description {
+      margin-top: 16px;
+      text-align: center;
+      max-width: 320px;
+    }
+    .ad-description h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .ad-description p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+
+    .divider { max-width: 1400px; margin: 0 auto 80px; padding: 0 40px; }
+    .divider div { height: 1px; background: rgba(255,255,255,0.06); }
+
+    /* Hide/show based on platform */
+    .fb-post { display: block; }
+    .ig-post { display: none; }
+    body.ig-mode .fb-post { display: none; }
+    body.ig-mode .ig-post { display: block; }
+
+    @media (max-width: 768px) {
+      .lp-section { padding: 0 16px; }
+      .hero { padding: 60px 20px 20px; }
+      .ad-grid { grid-template-columns: 1fr; justify-items: center; }
+      .header { padding: 16px 20px; }
+      .phone { width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header-logo">Mint<span>-X</span></a>
+    <a href="index.html" class="back">&larr; Back to Concepts</a>
+  </header>
+
+  <section class="hero">
+    <h1>Ad Concepts <span>by Funnel Stage</span></h1>
+    <p>6 ads across 3 funnel stages. Toggle between Facebook and Instagram preview. Every ad drives to the landing page or Amazon.</p>
+  </section>
+
+  <div class="platform-toggle">
+    <button class="active" onclick="setMode('fb')">Facebook Feed</button>
+    <button onclick="setMode('ig')">Instagram Feed</button>
+  </div>
+
+  <nav class="section-nav">
+    <a href="#problem-awareness">Problem Awareness</a>
+    <a href="#simple-switch">The Simple Switch</a>
+    <a href="#science-credibility">Science / Credibility</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- SECTION 1: PROBLEM AWARENESS (TOP FUNNEL) -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="lp-section" id="problem-awareness">
+    <div class="lp-section-header">
+      <h2>Problem Awareness</h2>
+    </div>
+    <p class="lp-subtitle">Top funnel. Make them feel the problem. Every homeowner knows this pain.</p>
+
+    <div class="ad-grid">
+
+      <!-- Ad 1: The Morning After -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">6am. You walk outside. Trash everywhere. Coffee grounds on the driveway. Chicken bones on the lawn. The raccoons got in again. Third time this month. You're not going to fix this with a bungee cord. <span class="see-more">...more</span></div>
+            <img src="images/ad-morning-after-4x5.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128078;&#128557;</span> 847</div>
+              <div class="fb-counts">312 comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">They always come back. Unless you switch the bag.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-morning-after-4x5.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">847 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> 6am. You walk outside. Trash everywhere. Coffee grounds on the driveway. Chicken bones on the lawn. The raccoons got in again. Third time this month. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"The Morning After"</h3>
+          <p>Raccoon disaster aftermath. The universal homeowner nightmare. Visceral problem awareness.</p>
+        </div>
+      </div>
+
+      <!-- Ad 2: They Always Come Back -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">Bungee cords on the lid. Bricks on top. That mesh net thing. The motion sensor sprinkler. You've tried it all. They still get in. Maybe the problem isn't the lid. It's the bag. <span class="see-more">...more</span></div>
+            <img src="images/ad-raccoon-burglar-4x5.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128514;&#128077;</span> 1.2K</div>
+              <div class="fb-counts">486 comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">The only EPA registered rodent repellent trash bag.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-raccoon-burglar-4x5.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">1,247 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> Bungee cords on the lid. Bricks on top. That mesh net thing. The motion sensor sprinkler. You've tried it all. They still get in. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"They Always Come Back"</h3>
+          <p>Raccoon caught in spotlight. Meme energy. Lists every failed solution before introducing the real one.</p>
+        </div>
+      </div>
+
+      <!-- Ad 3: NYC Has 3 Million Rats -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">New York has an estimated 3 million rats. They're not afraid of you. They're not afraid of your trash can. But they can't stand mint. Mint-X trash bags are infused with patented mint oil that makes rodents avoid the area entirely. EPA registered. Available everywhere. <span class="see-more">...more</span></div>
+            <img src="images/ad-nyc-rats-4x5.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128078;&#128077;</span> 2.3K</div>
+              <div class="fb-counts">1.1K comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">3 million rats. One weakness.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-nyc-rats-4x5.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">2,341 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> New York has an estimated 3 million rats. They're not afraid of you. They're not afraid of your trash can. But they can't stand mint. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"NYC Has 3 Million Rats"</h3>
+          <p>Urban angle. Shock stat + simple solution. High comment bait for city dwellers who know the problem firsthand.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><div></div></div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- SECTION 2: THE SIMPLE SWITCH (MID FUNNEL) -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="lp-section" id="simple-switch">
+    <div class="lp-section-header">
+      <h2>The Simple Switch</h2>
+    </div>
+    <p class="lp-subtitle">Mid funnel. They know the problem. Now show them how stupidly simple the fix is.</p>
+
+    <div class="ad-grid">
+
+      <!-- Ad 4: Before / After -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">Same trash. Same can. Same spot on the curb. Different bag. That's it. Mint-X trash bags have EPA-registered mint formula embedded in the plastic. Rodents smell it and leave. No traps. No poison. No bungee cords. Just switch the bag. <span class="see-more">...more</span></div>
+            <img src="images/ad-before-after-1x1.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128077;&#10084;&#65039;</span> 634</div>
+              <div class="fb-counts">189 comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">Just switch the bag. Problem solved.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-before-after-1x1.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">634 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> Same trash. Same can. Same spot on the curb. Different bag. That's it. No traps. No poison. No bungee cords. Just switch the bag. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"Before / After"</h3>
+          <p>Side-by-side split. Trashed driveway vs. clean curb. The simplicity of the switch is the hook.</p>
+        </div>
+      </div>
+
+      <!-- Ad 5: You Don't Need All That -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">Rat traps. Poison pellets. Motion sprinklers. Bungee cords. Mesh nets. Weighted lids. You've been overcomplicating this. Mint-X trash bags repel rodents with 100% natural mint oil baked into the plastic. EPA registered. Just switch the bag. <span class="see-more">...more</span></div>
+            <img src="images/ad-dont-need-all-that-1x1.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128077;&#128514;</span> 521</div>
+              <div class="fb-counts">247 comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">Stop overcomplicating pest control.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-dont-need-all-that-1x1.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">521 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> Rat traps. Poison pellets. Motion sprinklers. Bungee cords. Mesh nets. Weighted lids. You've been overcomplicating this. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"You Don't Need All That"</h3>
+          <p>Simplicity angle. Lists every overcomplicated solution people have tried, then shows just the bag. Less is more.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><div></div></div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- SECTION 3: SCIENCE / CREDIBILITY (LOWER FUNNEL) -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="lp-section" id="science-credibility">
+    <div class="lp-section-header">
+      <h2>Science / Credibility</h2>
+    </div>
+    <p class="lp-subtitle">Lower funnel. They're interested. Now give them the science and the EPA stamp to close the deal.</p>
+
+    <div class="ad-grid">
+
+      <!-- Ad 6: 1000x More Sensitive -->
+      <div class="phone-wrap">
+        <div class="phone"><div class="phone-notch"></div><div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar"></div>
+              <div><div class="fb-name">Mint-X</div><div class="fb-sponsored">Sponsored</div></div>
+              <span class="fb-dots">&#10005;</span>
+            </div>
+            <div class="fb-text">A rat's nose is up to 1,000x more sensitive than yours. What smells like a pleasant mint to you is absolute sensory overload for them. Mint-X embeds patented mint formula directly into the plastic — not sprayed on, not a coating, IN the material. They don't just avoid the bag. They avoid the entire area. EPA registered. <span class="see-more">...more</span></div>
+            <img src="images/ad-science-nose-4x5.png" class="fb-image" alt="">
+            <div class="fb-engagement">
+              <div class="fb-reactions"><span class="fb-reactions-icons">&#128077;&#128175;</span> 1.4K</div>
+              <div class="fb-counts">578 comments</div>
+            </div>
+            <div class="fb-actions">
+              <span class="fb-action">&#128077; Like</span>
+              <span class="fb-action">&#128172; Comment</span>
+              <span class="fb-action">&#8618; Share</span>
+            </div>
+            <div class="fb-bottom">
+              <div class="fb-bottom-left">
+                <div class="fb-desc">mintxbags.com</div>
+                <div class="fb-headline">Their nose is 1000x more sensitive. That's the advantage.</div>
+              </div>
+              <div class="fb-cta">Shop Now</div>
+            </div>
+          </div>
+          <div class="ig-post">
+            <div class="ig-header">
+              <div class="ig-avatar"></div>
+              <div class="ig-header-info"><div class="ig-name">mintx_official</div><div class="ig-sponsored">Sponsored</div></div>
+              <span class="ig-follow">Follow</span><span class="ig-dots">...</span>
+            </div>
+            <img src="images/ad-science-nose-4x5.png" class="ig-image" alt="">
+            <div class="ig-actions-bar">
+              <span class="ig-icon">&#9825;</span><span class="ig-icon">&#128172;</span><span class="ig-icon">&#9993;</span>
+              <span class="ig-icon ig-icon-right">&#9744;</span>
+            </div>
+            <div class="ig-cta-bar"><span class="ig-cta-text">Shop now</span><span class="ig-cta-chevron">&#8250;</span></div>
+            <div class="ig-likes">1,423 likes</div>
+            <div class="ig-caption"><strong>mintx_official</strong> A rat's nose is up to 1,000x more sensitive than yours. What smells like pleasant mint to you is absolute sensory overload for them. EPA registered. <span class="ig-more">...more</span></div>
+          </div>
+        </div></div>
+        <div class="ad-description">
+          <h3>"1000x More Sensitive"</h3>
+          <p>Science infographic. The "aha" moment — it's not about the bag being strong, it's about their nose being weak. EPA credibility closes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div style="height: 80px;"></div>
+
+  <script>
+    function setMode(mode) {
+      document.body.classList.toggle('ig-mode', mode === 'ig');
+      document.querySelectorAll('.platform-toggle button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
